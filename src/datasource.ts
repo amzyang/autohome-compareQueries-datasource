@@ -157,14 +157,6 @@ export class CompareQueriesDatasource {
                         );
                       }
                     });
-                  } else if (line.columns) {
-                    // else if table. always skip first column for joins
-                    for (let i = 1; i < line.columns.length; i++) {
-                      let column = line.columns[i];
-                      if (column.text) {
-                        column.text = _this.generalAlias(column.text, timeShiftAlias, aliasType, delimiter);
-                      }
-                    }
                   }
 
                   if (target.process) {
